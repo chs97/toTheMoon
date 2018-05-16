@@ -32,7 +32,7 @@ const routes = [{
   component: Login,
   meta: {
     level: 1,
-    text: '主页',
+    text: 'HOME',
     icon: 'fa-line-chart'
   }
 }, {
@@ -41,7 +41,7 @@ const routes = [{
   component: Login,
   meta: {
     level: 1,
-    text: '签到',
+    text: 'SIGN',
     icon: 'fa-calendar-check-o'
   }
 }, {
