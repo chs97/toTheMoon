@@ -1,0 +1,85 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #35395c;
+  .logo {
+    display: flex;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 70px;
+    }
+  }
+  .role {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    span {
+      display: inline-block;
+      width: 200px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: #3e4368;
+      color: #fff;
+      text-align: center;
+      line-height: 40px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+  .routes {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #fff;
+    margin-top: 40px;
+    .routes-title {
+      margin: 0;
+      padding-left: 25px;
+      margin-bottom: 20px;
+    }
+    .route-link {
+      height: 50px;
+      line-height: 50px;
+      padding-left: 45px;
+      font-size: 16px;
+      cursor: pointer;
+      i {
+        font-size: 18px !important;
+        width: 24px;
+        text-align: center;
+      }
+      span {
+        margin-left: 15px;
+      }
+      &.active {
+        position: relative;
+        overflow: hidden;
+        i {
+          position: relative;
+          z-index: 2;
+          color: #00d2ff;
+        }
+        span {
+          position: relative;
+          z-index: 2;
+        }
+        &::before {
+          position: absolute;
+          left: 25px;
+          top: 5px;
+          height: 40px;
+          border-radius: 24px;
+          width: 100%;
+          content: '';
+          background-color: #2a2c44;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
