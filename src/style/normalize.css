@@ -408,3 +408,7 @@ template {
 [hidden] {
   display: none;
 }
+
+li {
+  margin: 0;
+}
