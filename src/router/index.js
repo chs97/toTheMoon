@@ -53,7 +53,8 @@ const routes = [{
   component: Login,
   meta: {
     level: 9,
-    text: 'SIGN'
+    text: 'SIGN',
+    icon: 'fa-pencil'
   }
 }, {
   path: '/userManager',
@@ -61,7 +62,8 @@ const routes = [{
   component: UserManager,
   meta: {
     level: 10,
-    text: 'USER'
+    text: 'APPLY',
+    icon: 'fa-users'
   }
 }]
 
