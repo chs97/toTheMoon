@@ -1,19 +1,19 @@
 <template>
   <div class="login">
     <el-card class="login-form">
-      <h3 class="title">SIGN IN</h3>
+      <h3 class="title">LOGIN</h3>
       <el-form :model="login" :rules="rules" ref="loginForm">
         <el-form-item prop="username">
-          <el-input v-model="login.username" size="medium" prefix-icon="el-icon-fa-user-o" placeholder="USERNAME"></el-input>
+          <el-input v-model="login.username" size="medium" prefix-icon="el-icon-fa-user-o" placeholder="Username"></el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input v-model="login.password" size="medium" prefix-icon="el-icon-fa-lock" type="password" placeholder="PASSWORD"></el-input>
+          <el-input v-model="login.password" size="medium" prefix-icon="el-icon-fa-lock" type="password" placeholder="Password" @keyup.enter.native="handleLogin"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button :loading="loginLoading" type="primary" round class="full-width" @click="handleLogin">SIGN IN</el-button>
         </el-form-item>
         <el-form-item>
-          <el-button round class="full-width">REGISTER</el-button>
+          <el-button @click="goToRegister" round class="full-width">SIGN UP</el-button>
         </el-form-item>
       </el-form>
     </el-card>
@@ -59,7 +59,7 @@ export default {
         if (data.type === 1) {
           this.$message.success('登录成功.')
           this.handleUserUpdate(data.data)
-          this.$router.push({name: 'Index'})
+          this.$router.push({name: 'Home'})
         } else {
           throw new Error(data.message)
         }
@@ -68,6 +68,9 @@ export default {
       }).finally(() => {
         this.loginLoading = false
       })      
+    },
+    goToRegister() {
+      this.$router.push({name: 'Register'})
     }
   }
 }

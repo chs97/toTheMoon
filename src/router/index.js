@@ -1,16 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
+import Index from '@/pages/index'
 import Login from '@/pages/login'
+import Register from '@/pages/register'
 
 Vue.use(Router)
 
 const routes = [{
   path: '/',
-  name: 'Hello',
-  component: Hello,
+  name: 'Index',
+  component: Index,
   meta: {
-    // onlyMain: true
+    onlyMain: true
   }
 }, {
   path: '/login',
@@ -22,13 +24,13 @@ const routes = [{
 }, {
   path: '/register',
   name: 'Register',
-  component: Login,
+  component: Register,
   meta: {
     onlyMain: true
   }
 }, {
-  path: '/index',
-  name: 'Index',
+  path: '/home',
+  name: 'Home',
   component: Hello,
   meta: {
     level: 1,
