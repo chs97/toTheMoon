@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <el-container class="app">
+  <div id="app" v-loading.fullscreen.lock="loading" element-loading-background="rgba(255, 255, 255, 1)" element-loading-text="拼命加载中">
+    <el-container class="app" v-show="!loading">
       <el-aside width="270px" v-show="!onlyMain">
         <Menu />
       </el-aside>
@@ -17,28 +17,43 @@
 
 <script>
 import Menu from './components/Menu/index'
+import { USER_UPDATE } from './store/mutation-types.js'
+import axios from './http.js'
+import { mapMutations } from 'vuex'
 export default {
   name: 'app',
   components: {
     Menu
   },
+  created() {
+    const token = window.localStorage.getItem('token')
+    if (!token) {
+      this.$router.push({ name: 'Login' })
+      this.loading = false
+    } else {
+      axios
+        .get('/User/profile')
+        .then(({ data }) => {
+          this.handleUserUpdate(data.data)
+        })
+        .catch(err => this.$router.push({ name: 'Login' }))
+        .finally(() => (this.loading = false))
+    }
+  },
   data() {
     return {
-
+      loading: true
     }
   },
   computed: {
-    onlyMain () {
+    onlyMain() {
       return this.$route.meta.onlyMain === true
     }
   },
-  mounted() {
-    console.log(this.$route)
-  },
-  watch: {
-    '$route': (newVal, oldVal) => {
-      // console.log(newVal)
-    }
+  methods: {
+    ...mapMutations({
+      handleUserUpdate: USER_UPDATE
+    })
   }
 }
 </script>

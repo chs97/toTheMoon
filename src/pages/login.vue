@@ -59,6 +59,8 @@ export default {
         if (data.type === 1) {
           this.$message.success('登录成功.')
           this.handleUserUpdate(data.data)
+          axios.defaults.headers.common.token = data.data.token
+          window.localStorage.setItem('token', data.data.token)
           this.$router.push({name: 'Home'})
         } else {
           throw new Error(data.message)

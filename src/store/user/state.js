@@ -6,8 +6,7 @@ const state = {
   grade: '',
   college: '',
   major: '',
-  level: 1,
-  token: ''
+  level: 1
 }
 
 export default state

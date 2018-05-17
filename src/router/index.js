@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import Index from '@/pages/index'
 import Login from '@/pages/login'
 import Register from '@/pages/register'
+import UserManager from '@/pages/userManager'
 
 Vue.use(Router)
 
@@ -52,15 +53,15 @@ const routes = [{
   component: Login,
   meta: {
     level: 9,
-    text: '签到管理'
+    text: 'SIGN'
   }
 }, {
   path: '/userManager',
   name: 'UserManager',
-  component: Login,
+  component: UserManager,
   meta: {
     level: 10,
-    text: '用户管理'
+    text: 'USER'
   }
 }]
 
