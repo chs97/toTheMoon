@@ -29,7 +29,7 @@ const routes = [{
 }, {
   path: '/index',
   name: 'Index',
-  component: Login,
+  component: Hello,
   meta: {
     level: 1,
     text: 'HOME',
