@@ -5,6 +5,7 @@ import Index from '@/pages/index'
 import Login from '@/pages/login'
 import Register from '@/pages/register'
 import UserManager from '@/pages/userManager'
+import Home from '@/pages/home'
 
 Vue.use(Router)
 
@@ -32,7 +33,7 @@ const routes = [{
 }, {
   path: '/home',
   name: 'Home',
-  component: Hello,
+  component: Home,
   meta: {
     level: 1,
     text: 'HOME',

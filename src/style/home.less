@@ -1,0 +1,58 @@
+.home {
+  .el-card {
+    color: rgb(42, 47, 69);
+    .el-card__body {
+      padding: 10px 10px 10px 10px;
+      height: calc(~"100% - 20px");
+    }
+  }
+  .data-board {
+    display: flex;
+    flex-direction: row;
+    .contain {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: space-around;
+    }
+    .today {
+      display: flex;
+      flex-direction: row;
+      .el-card {
+        width: 190px;
+        height: 190px;
+        .contain {
+          .number {
+            font-size: 100px;
+          }
+        }
+      }
+    }
+    .today-detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 160px;
+      .el-card {
+        width: 100%;
+        height: 55px;
+      }
+    }
+    .pass-day {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .el-card {
+        width: 90px;
+        height: 90px;
+        .contain {
+          font-size: 14px;
+          .number {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+}

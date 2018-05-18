@@ -34,7 +34,11 @@ export default {
       axios
         .get('/User/profile')
         .then(({ data }) => {
-          this.handleUserUpdate(data.data)
+          if (data.type === 1) {
+            this.handleUserUpdate(data.data)
+          } else {
+            throw new Error('Fail')
+          }
         })
         .catch(err => this.$router.push({ name: 'Login' }))
         .finally(() => (this.loading = false))
