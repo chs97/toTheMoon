@@ -6,6 +6,7 @@ import Login from '@/pages/login'
 import Register from '@/pages/register'
 import UserManager from '@/pages/userManager'
 import Home from '@/pages/home'
+import SignManager from '@/pages/signManager'
 
 Vue.use(Router)
 
@@ -51,7 +52,7 @@ const routes = [{
 }, {
   path: '/signManager',
   name: 'SignManager',
-  component: Login,
+  component: SignManager,
   meta: {
     level: 9,
     text: 'SIGN',
